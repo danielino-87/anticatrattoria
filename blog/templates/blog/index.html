@@ -1,0 +1,63 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block title %} 
+Antica Trattoria Blog
+{% endblock %} 
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static "blog/post.css" %}" />
+  <link rel="stylesheet" href="{% static "blog/index.css" %}" />
+{% endblock %}
+
+{% block content %}
+<section id="welcome">
+  <header>
+    <img src="{% static "blog/images/logo-Antonio-De-Leo.png" %}" alt="Daniele - The Author Of This Blog"  align= "center" />
+    <h2> BY ANTONIO</h2>
+  </header>
+
+  <div class= iframe-responsive>
+     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/18JuQ9N6DHg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+     <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Europe%2FRome&src=ZGFuaWVsZWlvdmluZWxsaUBnbWFpbC5jb20&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4uaXRhbGlhbiNob2xpZGF5QGdyb3VwLnYuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%237986CB&color=%23C0CA33&color=%230B8043" style="border:solid 1px #777" width="560" height="315" frameborder="0" scrolling="no" align='right' ></iframe> 
+  </div>
+
+  
+
+  <p>Ciao a tutti! Venite a degustare le nostre pietanze! </p>
+</section>
+
+
+
+<section id="latest-posts">
+  <h2> PRENOTA Il MENU di Oggi !</h2>
+
+  <ul>
+    {% for post in posts %}
+      {% include "blog/includes/post.html" %}
+    {% endfor %}
+  </ul>
+</section>
+
+<section id="about">
+  <h2>La nostra MISSION</h2>
+  <p>
+   Il nostro ristorante utilizza primizie della natura , raccolte dai campi e direttamente 
+   messe al sevizio del nostro Chef e dei nostri cuochi.
+   Cuciniamo come una volta. Cibo molto semplice e genuino. Quello che contraddistingue la nostra Cucina 
+   e la nostra Terra.
+  </p>
+
+<br>
+
+  <h2>DOVE SIAMO</h2>
+  <div class= iframe-responsive>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.3029945240582!2d9.188410815430178!3d45.46369997910084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c6ae939351df%3A0xd445dec2978d0e3f!2sP.za%20del%20Duomo%2C%20Milano%20MI!5e0!3m2!1sen!2sit!4v1671887493951!5m2!1sen!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+<br>
+
+  <h2>CONTATTI</h2> 
+  <p> Cellulare : 3489241158 </p>   <p> e-mail : antonio.deleo@gmail.com  </p>
+
+</section>
+{% endblock %}
